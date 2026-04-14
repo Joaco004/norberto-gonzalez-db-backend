@@ -1,0 +1,28 @@
+meta {
+  name: Crear zona
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3000/api/zonas
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGU5YzBlOTRjY2RjOWMxYzZhNTJhNSIsImVzQWRtaW4iOnRydWUsImlhdCI6MTc3NjIwMDg1NywiZXhwIjoxNzc4NzkyODU3fQ.wW1dtggttzqWF-MHoDrR90MAwk0O6Qdq-9AMsDbShUs
+}
+
+body:json {
+  {
+    "nombre": "El Palomar",
+    "partido": "Tres de Febrero",
+    "provincia": "Buenos Aires"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

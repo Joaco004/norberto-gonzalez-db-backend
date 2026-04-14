@@ -1,0 +1,42 @@
+meta {
+  name: Crear propiedad
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:3000/api/propiedades
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGVhNTQyNjRjOTJiZTljYzYxZWVmZSIsImVzQWRtaW4iOmZhbHNlLCJpYXQiOjE3NzYyMDEyODksImV4cCI6MTc3ODc5MzI4OX0.BCno5N-2E1-iC7rAIxyWoFalZeHXOjDCH3FJIWPYdg4
+}
+
+body:json {
+  {
+    "titulo": "Departamento en Caseros",
+    "descripcion": "Departamento luminoso a metros del centro",
+    "tipo": "departamento",
+    "operacion": "alquiler",
+    "precio": 350000,
+    "moneda": "ARS",
+    "ambientes": 2,
+    "dormitorios": 1,
+    "banos": 1,
+    "superficieTotal": 55,
+    "superficieCubierta": 55,
+    "cochera": false,
+    "estado": "disponible",
+    "destacada": false,
+    "publicada": true,
+    "zona": "69deacadac7bf3cb9339ea26",
+    "calle": "Rivadavia"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
