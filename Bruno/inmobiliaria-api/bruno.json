@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "inmobiliaria-api",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

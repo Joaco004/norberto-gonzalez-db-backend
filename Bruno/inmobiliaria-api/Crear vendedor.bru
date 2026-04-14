@@ -1,0 +1,28 @@
+meta {
+  name: Crear vendedor
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/api/usuarios
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGU5YzBlOTRjY2RjOWMxYzZhNTJhNSIsImVzQWRtaW4iOnRydWUsImlhdCI6MTc3NjE5NzAxMCwiZXhwIjoxNzc4Nzg5MDEwfQ.TqKD-p5Z8rKXz9dPDfV8UaU1cul8rQeJCSCaKECXgb8
+}
+
+body:json {
+  {
+    "nombre": "Ignacio Tosi",
+    "email": "nacho@norbertogonzales.com",
+    "password": "vendedor123"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

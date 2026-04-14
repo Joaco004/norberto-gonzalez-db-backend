@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import Usuario, { IUsuario } from '../models/Usuarios '
+import Usuario, { IUsuario } from '../models/Usuarios'
 
 
 const generarToken = (id: string, esAdmin: boolean) => {
