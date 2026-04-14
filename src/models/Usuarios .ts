@@ -2,10 +2,11 @@ import mongoose, { CallbackError, Document, Schema } from "mongoose";
 import bcrypt from 'bcryptjs';
 
 export interface IUsuario extends Document {
+    id: string
     nombre: string
     email: string
     password: string
-    asAdmin: boolean
+    esAdmin: boolean
     activo: boolean
     createdAt: Date
     compararPassword: (password: string) => Promise<boolean>
