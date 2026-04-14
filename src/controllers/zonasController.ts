@@ -1,5 +1,5 @@
-import { Request, Response } from 'express'
-import Zona from '../models/Zona'
+import { Request, Response } from 'express';
+import Zona from '../models/Zona';
 
 export const getZonas = async (req: Request, res: Response) => {
   try {

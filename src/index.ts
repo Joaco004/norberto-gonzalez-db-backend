@@ -6,6 +6,7 @@ import authRoutes from './routes/authRoutes'
 import usuariosRoutes from './routes/usuariosRoutes'
 import propiedadesRoutes from './routes/propiedadesRoutes'
 import zonasRoutes from './routes/zonasRoutes'
+import historialRoutes from './routes/historialRoutes'
 
 dotenv.config()
 
@@ -20,6 +21,7 @@ app.use('/api/auth', authRoutes)
 app.use('/api/usuarios', usuariosRoutes)
 app.use('/api/propiedades', propiedadesRoutes)
 app.use('/api/zonas', zonasRoutes)
+app.use('/api/historial', historialRoutes)
 
 const PORT = process.env.PORT || 3000
 

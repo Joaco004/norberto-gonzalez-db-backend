@@ -1,0 +1,20 @@
+meta {
+  name: Obtener historial
+  type: http
+  seq: 8
+}
+
+get {
+  url: http://localhost:3000/api/historial
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGU5YzBlOTRjY2RjOWMxYzZhNTJhNSIsImVzQWRtaW4iOnRydWUsImlhdCI6MTc3NjIwMDg1NywiZXhwIjoxNzc4NzkyODU3fQ.wW1dtggttzqWF-MHoDrR90MAwk0O6Qdq-9AMsDbShUs
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

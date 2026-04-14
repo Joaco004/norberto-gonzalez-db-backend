@@ -1,6 +1,6 @@
-import { Request, Response } from 'express'
-import Usuario, { IUsuario } from '../models/Usuarios'
-import { RequestConUsuario } from '../middleware/authMiddleware'
+import { Request, Response } from 'express';
+import Usuario, { IUsuario } from '../models/Usuarios';
+import { RequestConUsuario } from '../middleware/authMiddleware';
 
 export const getUsuarios = async (req: Request, res: Response) => {
   try {

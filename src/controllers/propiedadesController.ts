@@ -1,7 +1,7 @@
-import { Request, Response } from 'express'
-import Propiedad, { IPropiedad } from '../models/Propiedades'
-import Historial from '../models/Historial'
-import { RequestConUsuario } from '../middleware/authMiddleware'
+import { Request, Response } from 'express';
+import Propiedad, { IPropiedad } from '../models/Propiedades';
+import Historial from '../models/Historial';
+import { RequestConUsuario } from '../middleware/authMiddleware';
 
 export const getPropiedades = async (req: Request, res: Response) => {
   try {
