@@ -6,10 +6,21 @@ meta {
 
 post {
   url: http://localhost:3000/api/contactos
-  body: none
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "propiedad": "69deaeadac7bf3cb9339ea31",
+    "nombre": "Juan Pérez",
+    "email": "juan@gmail.com",
+    "telefono": "1134567890",
+    "mensaje": "Hola, me interesa el departamento, ¿sigue disponible?"
+  }
 }
 
 settings {
   encodeUrl: true
+  timeout: 0
 }
