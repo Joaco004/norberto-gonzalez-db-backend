@@ -35,10 +35,11 @@ export const getPropiedades = async (req: Request, res: Response) => {
       if (precioMax) filtros.precio.$lte = Number(precioMax)
     }
 
-    const orden: Record<string, 1 | -1> = orderBy === 'precio_asc'
-      ? { precio: 1 }
-      : orderBy === 'precio_desc'
-        ? { precio: -1 }
+    const orden: Record<string, 1 | -1> =
+      orderBy === 'precio_asc' ? { precio: 1 }
+        : orderBy === 'precio_desc' ? { precio: -1 }
+        : orderBy === 'recientes' ? { createdAt: -1 }
+        : orderBy === 'antiguos' ? { createdAt: 1 }
         : { createdAt: -1 }
 
     const propiedades = await Propiedad.find(filtros)
