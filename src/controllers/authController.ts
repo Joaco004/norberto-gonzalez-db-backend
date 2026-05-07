@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import Usuario, { IUsuario } from '../models/Usuarios'
 import { logearIntentoLogin } from '../middleware/loggerMiddleware'
+import { RequestConUsuario } from '../middleware/authMiddleware'
 
 
 const generarToken = (id: string, esAdmin: boolean) => {
@@ -56,6 +57,33 @@ export const getMe = async (req: Request, res: Response) => {
     }
 
     res.json(usuario)
+  } catch (error) {
+    res.status(500).json({ mensaje: 'Error en el servidor' })
+  }
+}
+
+export const cambiarPassword = async (req: RequestConUsuario, res: Response) => {
+  try {
+    const { passwordActual, passwordNueva } = req.body
+
+    const usuario = await Usuario.findById(req.usuarioId) as IUsuario | null
+
+    if (!usuario) {
+      res.status(404).json({ mensaje: 'Usuario no encontrado' })
+      return
+    }
+
+    const passwordOk = await usuario.compararPassword(passwordActual)
+
+    if (!passwordOk) {
+      res.status(401).json({ mensaje: 'La contraseña actual es incorrecta' })
+      return
+    }
+
+    usuario.password = passwordNueva
+    await usuario.save()
+
+    res.json({ mensaje: 'Contraseña actualizada correctamente' })
   } catch (error) {
     res.status(500).json({ mensaje: 'Error en el servidor' })
   }
