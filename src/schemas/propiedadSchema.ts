@@ -1,0 +1,24 @@
+import { z } from 'zod'
+
+export const propiedadSchema = z.object({
+  titulo: z.string().min(1, 'El título es requerido'),
+  tipo: z.enum(['casa', 'departamento', 'local', 'terreno', 'oficina', 'cochera']),
+  operacion: z.enum(['venta', 'alquiler', 'alquiler-temporal']),
+  precio: z.number().positive('El precio debe ser mayor a 0'),
+  moneda: z.enum(['USD', 'ARS']).default('USD'),
+  zona: z.string().min(1, 'La zona es requerida'),
+  estado: z.enum(['disponible', 'reservado', 'vendido', 'alquilado']).default('disponible'),
+  ambientes: z.number().optional(),
+  dormitorios: z.number().optional(),
+  banos: z.number().optional(),
+  superficieTotal: z.number().optional(),
+  superficieCubierta: z.number().optional(),
+  cochera: z.boolean().default(false),
+  antiguedad: z.number().optional(),
+  destacada: z.boolean().default(false),
+  publicada: z.boolean().default(false),
+  calle: z.string().optional(),
+  descripcion: z.string().optional(),
+  ficha: z.number().optional(),
+  subtipo: z.string().optional(),
+})
