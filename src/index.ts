@@ -9,6 +9,8 @@ import zonasRoutes from './routes/zonasRoutes'
 import historialRoutes from './routes/historialRoutes'
 import contactosRoutes from './routes/contactosRoutes'
 import fotosRoutes from './routes/fotosRoutes'
+import helmet from 'helmet'
+import { limitadorGeneral } from './middleware/rateLimitMiddleware'
 
 dotenv.config()
 
@@ -16,8 +18,10 @@ conectarDB()
 
 const app = express()
 
+app.use(helmet())
 app.use(cors())
 app.use(express.json())
+app.use(limitadorGeneral)
 
 app.use('/api/auth', authRoutes)
 app.use('/api/usuarios', usuariosRoutes)
