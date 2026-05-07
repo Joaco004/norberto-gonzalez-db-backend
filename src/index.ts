@@ -12,7 +12,6 @@ import fotosRoutes from './routes/fotosRoutes'
 import helmet from 'helmet'
 import { limitadorGeneral } from './middleware/rateLimitMiddleware'
 import loggerMiddleware from './middleware/loggerMiddleware'
-import mongoSanitize from 'express-mongo-sanitize'
 import hpp from 'hpp'
 
 dotenv.config()
@@ -33,7 +32,6 @@ app.use(cors({
 }))
 app.use(express.json({ limit: '10mb' }))
 app.use(express.urlencoded({ limit: '10mb', extended: true }))
-app.use(mongoSanitize({ replaceWith: '_' }))
 app.use(hpp())
 app.use(limitadorGeneral)
 app.use(loggerMiddleware)
