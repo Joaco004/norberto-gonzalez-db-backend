@@ -3,7 +3,7 @@ import { login, getMe, cambiarPassword } from '../controllers/authController';
 import authMiddleware from "../middleware/authMiddleware";
 import { limitadorLogin } from "../middleware/rateLimitMiddleware";
 import validar from '../middleware/validarMiddleware'
-import { loginSchema } from '../schemas/authSchema'
+import { loginSchema } from '../schemas/AuthSchema'
 
 const router = Router()
 
