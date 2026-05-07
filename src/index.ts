@@ -11,6 +11,7 @@ import contactosRoutes from './routes/contactosRoutes'
 import fotosRoutes from './routes/fotosRoutes'
 import helmet from 'helmet'
 import { limitadorGeneral } from './middleware/rateLimitMiddleware'
+import loggerMiddleware from './middleware/loggerMiddleware'
 import mongoSanitize from 'express-mongo-sanitize'
 import hpp from 'hpp'
 
@@ -35,6 +36,7 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }))
 app.use(mongoSanitize())
 app.use(hpp())
 app.use(limitadorGeneral)
+app.use(loggerMiddleware)
 
 app.use('/api/auth', authRoutes)
 app.use('/api/usuarios', usuariosRoutes)

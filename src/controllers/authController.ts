@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import Usuario, { IUsuario } from '../models/Usuarios'
+import { logearIntentoLogin } from '../middleware/loggerMiddleware'
 
 
 const generarToken = (id: string, esAdmin: boolean) => {
@@ -23,6 +24,8 @@ export const login = async (req: Request, res: Response) => {
     }
 
     const passwordOk = await usuario.compararPassword(password)
+
+     logearIntentoLogin(req.ip || '', email, passwordOk)
 
     if (!passwordOk) {
       res.status(401).json({ mensaje: 'Credenciales inválidas' })
