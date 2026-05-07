@@ -2,7 +2,7 @@ import { Router } from "express";
 import { getPropiedades, getPropiedadById, crearPropiedad, editarPropiedad, eliminarPropiedad } from '../controllers/propiedadesController';
 import authMiddleware from "../middleware/authMiddleware";
 import validar from '../middleware/validarMiddleware'
-import { propiedadSchema } from '../schemas/propiedadSchema'
+import { propiedadSchema } from '../schemas/PropiedadSchema'
 
 const router = Router()
 

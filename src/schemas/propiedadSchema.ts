@@ -21,4 +21,5 @@ export const propiedadSchema = z.object({
   descripcion: z.string().optional(),
   ficha: z.number().optional(),
   subtipo: z.string().optional(),
+  techada: { type: Boolean },
 })

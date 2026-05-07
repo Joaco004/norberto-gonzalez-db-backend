@@ -39,6 +39,7 @@ export interface IPropiedad extends Document {
     calle?: string
     latitud?: number
     longitud?: number
+    techada?: boolean
 }
 
 const FotoSchema = new Schema<IFoto>({
