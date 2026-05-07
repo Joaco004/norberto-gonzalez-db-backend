@@ -1,6 +1,7 @@
 import mongoose, { Document, Schema } from "mongoose";
 
 interface IFoto {
+    _id?: string
     url: string
     urlThumbnail: string
     orden: number
