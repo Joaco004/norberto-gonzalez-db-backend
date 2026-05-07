@@ -24,7 +24,7 @@ app.use(helmet())
 app.use(cors({
   origin: [
     'http://localhost:573',
-    'https://la-web-de-norberto.com'
+    'https://norberto-gonzalez-db-frontend.vercel.app'
   ],
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
